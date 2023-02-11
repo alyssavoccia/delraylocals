@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const DiningCard = ({ restaurant }) => {
   return (
-    <div className='flex flex-col shadow-md rounded h-100'>
+    <div className='flex flex-col shadow-md rounded h-100 w-full'>
       <div className="p-2 bg-gray-100 rounded-t">
         <p className='font-bold'>{restaurant.name}</p>
       </div>

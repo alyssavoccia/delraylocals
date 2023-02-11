@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <section className="mt-auto bg-gray-300">
       <div className="max-w-[1200px] mx-auto text-center py-10">
-        <ul className="flex justify-center gap-4">
+        <ul className="flex flex-wrap justify-center gap-4">
           <li>
             <Link href='/about'>About</Link>
           </li>
