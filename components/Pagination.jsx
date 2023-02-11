@@ -10,7 +10,7 @@ const Pagination = ({ currentPage, numPages }) => {
 
   return (
     <div className="mt-6">
-      <ul className="flex flex-wrap gap-2 pl-0 list-none my-2">
+      <ul className="flex flex-wrap md:flex-nowrap gap-2 pl-0 list-none my-2">
         {!isFirst && (
           <Link href={prevPage}>
             <li className="relative block py-2 px-3 leading-tight border border-blue-200 text-blue-600 mr-1 hover:bg-blue-200 cursor-pointer transition duration-200 rounded font-semibold">Previous</li>
