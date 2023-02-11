@@ -73,7 +73,7 @@ const DiningPage = ({ restaurants, categories }) => {
                 breakLabel='...'
                 nextLabel={<FontAwesomeIcon icon={faChevronRight} />}
                 onPageChange={handleClick}
-                pageRangeDisplayed={3}
+                pageRangeDisplayed={4}
                 pageCount={pageCount}
                 previousLabel={<FontAwesomeIcon icon={faChevronLeft} />}
                 renderOnZeroPageCount={null}
