@@ -15,7 +15,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="z-10 absolute top-0 left-0 w-screen h-screen videoHero"></div>
-      <video autoPlay muted loop className='z-0 absolute top-0 left-0 w-screen h-screen object-cover'>
+      <video playsInline autoPlay muted loop className='z-0 absolute top-0 left-0 w-screen h-screen object-cover'>
         <source src='./heroVideo.mp4' type='video/mp4' />
       </video>
     </div>
