@@ -3,9 +3,10 @@ const Hero = () => {
   return (
     <div className="flex justify-center items-center relative h-screen">
       <div className="z-20 text-white text-center">
-        <h1 className=" text-5xl font-extrabold mb-4">The Village By the Sea</h1>
-        <p className="text-2xl font-medium">Don't miss out on the fun in Delray Beach</p>
-        <p className="text-2xl font-medium">Subscribe now and stay in the know!</p>
+        <h1 className=" text-5xl font-extrabold">Delray Beach</h1>
+        <h2 className=" text-3xl font-bold mb-4">The Village By the Sea</h2>
+        <p className="text-xl font-medium">Don't miss out on the fun in Delray Beach</p>
+        <p className="text-xl font-medium">Subscribe now and stay in the know!</p>
         <div className="flex items-center justify-center mt-4">
           <label className="relative block h-[40px] mr-2">
             <span className="sr-only">Enter your email</span>
