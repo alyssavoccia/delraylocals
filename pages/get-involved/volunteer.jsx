@@ -7,7 +7,7 @@ const Volunteer = ({ organizations }) => {
   return (
     <Layout title='Volunteer | Delray Locals'>
       <section className='pt-24 pb-14 px-4 lg:px-0'>
-        <h1 className='text-center text-4xl font-black'>Volunteer</h1>
+        <h1 className='text-center text-2xl md:text-4xl font-black'>Volunteer</h1>
         <div className="max-w-[900px] mx-auto">
           <p className="text-center italic mt-4">&quot;We make a living by what we get, but we make a life by what we give.&ldquo;— Winston Churchill</p>
           <p className="mt-2">Welcome to the hub of volunteering opportunities in Delray Beach, Florida! This city is brimming with community-spirited individuals who are eager to make a positive impact, and we&apos;re here to connect you with the best ways to get involved.</p>

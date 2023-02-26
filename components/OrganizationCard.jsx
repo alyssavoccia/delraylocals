@@ -9,7 +9,7 @@ const OrganizationCard = ({ organization }) => {
           <h2 className="mt-2 mb-2  font-bold">{organization.name}</h2>
           <p>{organization.info}</p>
         </div>
-        <a href={organization.website} className="p-4 mt-auto flex items-center text-sm text-blue-500 hover:text-blue-700 transition-all ease-in border-t">View Website</a>
+        <a href={organization.website} rel='noreferrer' target='_blank' className="p-4 mt-auto flex items-center text-sm text-blue-500 hover:text-blue-700 transition-all ease-in border-t">View Website</a>
     </div>
   )
 }

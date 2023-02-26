@@ -7,7 +7,7 @@ const ProfessionalCommunity = ({ organizations }) => {
   return (
     <Layout title='Professional/Community Organizations | Delray Locals'>
       <section className='pt-24 pb-14 px-4 lg:px-0'>
-        <h1 className='text-center text-4xl font-black'>Professional/Community Organizations</h1>
+        <h1 className='text-center px-2 text-2xl md:text-4xl font-black'>Professional/Community Organizations</h1>
         <div className="max-w-[900px] mx-auto">
           <p className="mt-4">Delray Beach offers a wide range of professional and community organizations, each offering unique opportunities for personal and professional growth. Being a part of these organizations can bring numerous benefits to individuals including professional and personal development. </p>
           <p className="mt-2">Joining community organizations is an excellent way to give back to the community and make a positive impact. By participating in these organizations, individuals can build strong relationships with their neighbors and help to create a better, more connected community..</p>
