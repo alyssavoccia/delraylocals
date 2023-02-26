@@ -47,7 +47,7 @@ const DiningPage = ({ restaurants, categories }) => {
             So, loosen your belts and sharpen your forks, it's time to embark on a flavorful culinary tour of Delray Beach!
           </p>
         </div>
-        <div className="flex flex-wrap md:flex-nowrap max-w-[1100px] justify-center mx-auto mt-16">
+        <div className="flex flex-wrap md:flex-nowrap max-w-[1100px] px-4 xl:px-0 justify-center mx-auto mt-16">
           <div className="w-full md:w-[200px] mb-8 md:mb-0 pl-4">
             <p className="font-bold text-lg">Categories</p>
             <ul className="flex flex-wrap md:flex-col gap-3 mt-2">
