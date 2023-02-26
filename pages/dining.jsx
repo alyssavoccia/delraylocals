@@ -69,7 +69,7 @@ const DiningPage = ({ restaurants, categories }) => {
             </div>
             {pageCount > 1 && (
               <ReactPaginate 
-                className='flex gap-3 mt-4'
+                className='flex gap-3 mt-4 items-center text-lg'
                 breakLabel='...'
                 nextLabel={<FontAwesomeIcon icon={faChevronRight} />}
                 onPageChange={handleClick}

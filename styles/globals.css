@@ -10,3 +10,19 @@ html {
 .videoHero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
+
+.previous,
+.next {
+  font-size: 12px;
+}
+
+.getInvolvedBox {
+  display: none;
+  right: 0.5rem;
+  top: 1.5rem;
+  z-index: 100;
+}
+
+.getInvolved:hover .getInvolvedBox {
+  display: flex;
+}

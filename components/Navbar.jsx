@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const router = useRouter();
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <header className="fixed z-50 w-screen">
@@ -37,47 +44,76 @@ const Navbar = () => {
                 </div>
                 <ul className="flex flex-col items-center justify-between">
                   <li className="py-4">
-                    <Link href='#' onClick={() => setIsNavOpen(false)}>Home</Link>
+                    <Link className={`${router.pathname === '/' && 'text-blue-600'}`} href='/' onClick={() => setIsNavOpen(false)}>Home</Link>
                   </li>
                   <li className="py-4">
-                    <Link href='#' onClick={() => setIsNavOpen(false)}>About</Link>
+                    <Link className={`${router.pathname === '/about' && 'text-blue-600'}`} href='/about' onClick={() => setIsNavOpen(false)}>About</Link>
                   </li>
                   <li className="py-4">
-                    <Link href='#' onClick={() => setIsNavOpen(false)}>Events</Link>
+                    <Link className={`${router.pathname === '/events' && 'text-blue-600'}`} href='/events' onClick={() => setIsNavOpen(false)}>Events</Link>
                   </li>
                   <li className="py-4">
-                    <Link href='/dining' onClick={() => setIsNavOpen(false)}>Dining</Link>
+                    <Link className={`${router.pathname === '/dining' && 'text-blue-600'}`} href='/dining' onClick={() => setIsNavOpen(false)}>Dining</Link>
                   </li>
                   <li className="py-4">
-                    <Link href='#' onClick={() => setIsNavOpen(false)}>Living</Link>
+                    <Link className={`${router.pathname === '/living' && 'text-blue-600'}`} href='/living' onClick={() => setIsNavOpen(false)}>Living</Link>
+                  </li>
+                  <li className="py-4 relative">
+                    <p className={`${router.pathname.includes('/get-involved') && 'text-blue-600'} w-full flex items-center cursor-pointer`} onClick={toggleDropdown}>
+                      Get Involved
+                      <svg
+                        className={`w-4 h-4 ml-2 transition-transform transform ${
+                          isDropdownOpen ? 'rotate-180' : ''
+                        }`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 13a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 13z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                    {isDropdownOpen && (
+                      <ul className="absolute top-full left-[-2rem] rounded w-[220px] p-4 bg-gray-100">
+                        <li>
+                          <Link className={`${router.pathname === '/get-involved/volunteer' && 'text-blue-600'} hover:text-blue-600`} href="/get-involved/volunteer"  onClick={() => setIsNavOpen(false)}>Volunteer</Link>
+                        </li>
+                        <li className="mt-3">
+                          <Link className={`${router.pathname === '/get-involved/professional-community' && 'text-blue-600'} hover:text-blue-600`} href="/get-involved/professional-community"  onClick={() => setIsNavOpen(false)}>Professional/Community</Link>
+                        </li>
+                      </ul>
+                    )}
                   </li>
                   <li className="py-4">
-                    <Link href='#' onClick={() => setIsNavOpen(false)}>Community</Link>
-                  </li>
-                  <li className="py-4">
-                    <Link href='#' onClick={() => setIsNavOpen(false)}>Contact</Link>
+                    <Link className={`${router.pathname === '/contact' && 'text-blue-600'}`} href='/contact' onClick={() => setIsNavOpen(false)}>Contact</Link>
                   </li>
                 </ul>
               </div>
             </section>
             <ul className="hidden lg:flex">
               <li className="px-2">
-                <Link className={router.pathname === '/about' && 'text-blue-600'} href='/about'>About</Link>
+                <Link className={`${router.pathname === '/about' && 'text-blue-600'} hover:text-blue-600 transition-all duration-150 ease-in`} href='/about'>About</Link>
               </li>
               <li className="px-2">
-                <Link className={router.pathname === '/events' && 'text-blue-600'} href='/events'>Events</Link>
+                <Link className={`${router.pathname === '/events' && 'text-blue-600'} hover:text-blue-600 transition-all duration-150 ease-in`} href='/events'>Events</Link>
               </li>
               <li className="px-2">
-                <Link className={router.pathname.includes('/dining')  && 'text-blue-600'} href='/dining'>Dining</Link>
+                <Link className={`${router.pathname.includes('/dining')  && 'text-blue-600'} hover:text-blue-600 transition-all duration-150 ease-in`} href='/dining'>Dining</Link>
               </li>
               <li className="px-2">
-                <Link className={router.pathname === '/living' && 'text-blue-600'} href='/living'>Living</Link>
+                <Link className={`${router.pathname === '/living' && 'text-blue-600'} hover:text-blue-600 transition-all duration-150 ease-in`} href='/living'>Living</Link>
+              </li>
+              <li className="px-2 relative getInvolved">
+                <p className={`${router.pathname.includes('/get-involved') && 'text-blue-600'} hover:text-blue-600 transition-all duration-150 ease-in flex items-center cursor-default`} href='/get-involved'>Get Involved <FontAwesomeIcon className='pt-1 pl-1' icon={faAngleDown} /></p>
+                <div className="bg-white shadow-md border p-2 absolute flex flex-col getInvolvedBox">
+                  <Link className={`${router.pathname === '/get-involved/volunteer' && 'text-blue-600'} transition-all duration-150 ease-in hover:text-blue-600`} href='/get-involved/volunteer'>Volunteer</Link>
+                  <Link className={`${router.pathname === '/get-involved/professional-community' && 'text-blue-600'} transition-all duration-150 ease-in hover:text-blue-600 mt-3`} href='/get-involved/professional-community'>Professional/Community</Link>
+                </div>
               </li>
               <li className="px-2">
-                <Link className={router.pathname === '/get-involved' && 'text-blue-600'} href='/get-involved'>Get Involved</Link>
-              </li>
-              <li className="px-2">
-                <Link className={router.pathname === '/contact' && 'text-blue-600'} href='/contact'>Contact</Link>
+                <Link className={`${router.pathname === '/contact' && 'text-blue-600'} hover:text-blue-600 transition-all duration-150 ease-in`} href='/contact'>Contact</Link>
               </li>
             </ul>
           </nav>
